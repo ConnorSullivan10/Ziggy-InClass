@@ -1,9 +1,9 @@
-﻿namespace Ziggy
+﻿using System;
+
+namespace Ziggy
 {
     public class Leaper
     {
-        public Leaper()
-        {
-        }
+        public DateTime CurrentDate { get; set; }
     }
 }

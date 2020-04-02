@@ -20,25 +20,28 @@ namespace Ziggy
              * Host:     Elvis Presley
             */
 
-            var sam = new Leaper();
 
-            var elvis = new Host
-            {
-                CurrentLeaper = sam
-            };
+            var elvis = new Host();
 
-            var home = new HistoricalEvent();
+            var elvisFirstSingle = new HistoricalEvent();
 
-            var leap = new Leap
-            {
-                Event = home,
-                Host = elvis,
-                Leaper = sam
-            };
 
             var budget = new Budget();
 
             // sam to leap into elvis on the date of his first single
+            //var leap = new Leap
+            //{
+            //    Event = home,
+            //    Host = elvis,
+            //    Leaper = sam
+            //};
+
+            //sam is only leaper
+            var sam = new Leaper();
+            sam.CurrentDate = DateTime.Today.AddDays(100);
+
+            elvis.CurrentLeaper = sam;
+            budget.AuthorizeLeap(sam, elvisFirstSingle.DateInHistory);
         }
     }
 }
